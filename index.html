@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>           //referencia del origen de los datos
+        let url = 'http://localhost:8000/api/products/all'
+        //solicitud a la url
+        fetch(url)
+        .then(Response=>Response.json())//resolvemos la primer promesa para traer los datos en formato json 
+        .then(data=>console.log(data))//leemos el objeto y lo mostramos en consola
+        .catch(error=>console.log(error))//si hay error lo atrapamos
+
+    </script>
+</body>
+</html>
