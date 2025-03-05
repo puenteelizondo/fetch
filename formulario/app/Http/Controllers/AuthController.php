@@ -81,10 +81,8 @@ class AuthController extends Controller
         }
 
         // Respuesta exitosa
-        return response()->json([
-            'message' => 'Inicio de sesión exitoso',
-            'usuario' => $usuario->usuario
-        ], Response::HTTP_OK); // 200 OK
+        return view("modules/dashboard/Enviar_Fiscal");
+
 
     } catch (\Exception $e) {
         Log::error("Error en el login: " . $e->getMessage());

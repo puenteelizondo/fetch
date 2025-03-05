@@ -98,19 +98,27 @@ return [
         ],
 
         'sqlsrv' => [
-            'driver' => 'sqlsrv',
-            'url' => env('DB_URL'),
-            'host' => env('DB_HOST', 'localhost'),
-            'port' => env('DB_PORT', '1433'),
-            'database' => env('DB_DATABASE', 'laravel'),
-            'username' => env('DB_USERNAME', 'root'),
-            'password' => env('DB_PASSWORD', ''),
-            'charset' => env('DB_CHARSET', 'utf8'),
-            'prefix' => '',
-            'prefix_indexes' => true,
-            // 'encrypt' => env('DB_ENCRYPT', 'yes'),
-            // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
-        ],
+        'driver' => 'sqlsrv',
+        'host' => env('DB_HOST', '127.0.0.1'),
+        'port' => env('DB_PORT', '1433'),
+        'database' => env('DB_DATABASE', 'formulario'),
+        'username' => env('DB_USERNAME', 'sa'),
+        'password' => env('DB_PASSWORD', 'Triggerdb!!!!'),
+        'charset' => 'utf8mb4',
+        'prefix' => '',
+    ],
+
+    // Conexión para la base de datos 'DB2'
+    'web-sqlsrv' => [
+        'driver' => 'sqlsrv',
+        'host' => env('DB_WEB_HOST', '127.0.0.1'),
+        'port' => env('DB_WEB_PORT', '1433'),
+        'database' => env('DB_WEB_DATABASE', 'DB2'),
+        'username' => env('DB_WEB_USERNAME', 'sa'),
+        'password' => env('DB_WEB_PASSWORD', 'Triggerdb!!!!'),
+        'charset' => 'utf8mb4',
+        'prefix' => '',
+    ],
 
     ],
 
