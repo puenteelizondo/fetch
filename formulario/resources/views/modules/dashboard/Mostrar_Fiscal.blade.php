@@ -20,6 +20,7 @@
             color: azure;
         }
     </style>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
   </head>
   <body>
     <h1>Fiscal</h1>
@@ -48,7 +49,11 @@
         let url = 'http://localhost:8000/api/fiscal/registros';
 
         // Solicitud a la URL
-        fetch(url)
+        fetch(url, {
+            headers: {
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+            }
+        })
             .then(response => response.json()) // Resolvemos la primera promesa y traemos los datos en formato JSON
             .then(response => {
                 const registros = response.data;  // Aquí accedemos correctamente al array de registros

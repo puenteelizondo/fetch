@@ -8,7 +8,7 @@
                 <div class="card  mt-4">    
                     <div class="card-body">
                         <h2>Registro de usuario</h2>
-                        <form action="{{route('registrar')}}" method="post">
+                        <form action="{{route('/registrar-usuario')}}" method="post">
                         @csrf
                         @method('POST')
                         <label for="usuario">usuario</label>

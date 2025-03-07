@@ -7,9 +7,16 @@
         <div class="row">
             <div class="col">
                 <div class="card mt-4">    
+                    <pre>   
+                    @if(isset($session))
+                        <p>Usuario: {{ $session['usuario'] }}</p>
+                        @else
+                            <p>No hay usuario en la sesión.</p>
+                        @endif
+                    </pre>
                     <div class="card-body">
                         <h2>Formulario de Contacto</h2>
-                        <form action="{{ route('fiscal') }}" method="post">
+                        <form action="{{route('enviar-fiscal')}}" method="post">
                             @csrf
                             @method('post')
 
